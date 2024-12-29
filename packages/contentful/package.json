@@ -1,0 +1,39 @@
+{
+  "name": "@repo/contentful",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./client": "./src/components/client.tsx",
+    "./server": "./src/components/server.tsx",
+    "./hooks": "./src/hooks.ts",
+    "./model": "./src/typings.ts",
+    "./interface": "./src/interface.ts",
+    "./utils": "./src/utils.ts"
+  },
+  "scripts": {
+    "generator": "node ./lib/generator.js",
+    "lint:tsc": "npx tsc",
+    "lint:fix": "npx eslint --fix src/**/*.{ts,tsx}",
+    "lint": "pnpm lint:tsc && pnpm lint:fix"
+  },
+  "dependencies": {
+    "contentful-resolve-response": "^1.8.1",
+    "json-stringify-safe": "^5.0.1",
+    "react-server-only-context": "^1.0.0"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/contentful-resolve-response": "^0.1.33",
+    "@types/json-stringify-safe": "^5.0.3",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "typescript": "5.5.4"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  }
+}
